@@ -34,44 +34,31 @@ function fillDropdownDrinks(){
     let selectDrinkOption = document.createElement("option");
     selectDrinkOption.value = "";
     selectDrinkOption.textContent = "Select a Drink ..";
+    
     drinksList.appendChild(selectDrinkOption);
     
-    
-    let drinksLength = getDrinksFromCode(drinks)
-    for(let i = 0 ; i < drinksLength; i++){
-        let newOption = document.createElement("option");
-        newOption.value = drinksLength[i].code;
-        newOption.textContent = drinksLength[i].drinks;
+     let menuLength = menu.length;
+     for(let i = 0; i < menuLength; i++){
+        let drinkOption = document.createElement("option");
+        drinkOption.value = menu[i].drinks;
+        drinkOption.textContent = menu[i].drinks;
 
-        drinksList.appendChild(newOption);
-    }
-}
-function getDrinksFromCode(menu, drinks){
-        let menucount = menu.length;
-        for(let i = 0; i < menucount;  i++){
-         if(menu[i].drinks== drinks){
-             return menu[i];
-            }
+        drinksList.appendChild(drinkOption);
      }
-     return null;
-        }
+}
 
-//    function selectbtnOnClick(){
-//     const footballTeamsList = document.getElementById("footballTeamsList");
-//      let selectedTeamCode = footballTeamsList.value;
-//     let selectedTeam = getTeamFromCode(teams, selectedTeamCode);
 
-//     let message = `You selected the ${selectedTeam.name} (${selectedTeam.code}) who play in ${selectedTeam.plays}`;
-//     const teamInformation = document.getElementById("teamInformation");
-//     teamInformation.innerHTML = message;
 
-//    }
-//    function getTeamFromCode(teams, code){
-//     let teamscount = teams.length;
-//     for(let i = 0; i < teamscount;  i++){
-//         if(teams[i].code == code){
-//           return teams[i];
+//      let selectedDrinkCode = drinksList.value;
+//      let selectedDrinks = getDrinks(menu,drinks)
+  
+// }
+// function getDrinks(menu, drinks){
+//     let menucount = menu.length;
+//     for(let i = 0; i < menucount; i++){
+//         if(menu[i].drinks == drinks){
+//             return menu[i];
 //         }
 //     }
-//     return null;
-//    }
+//   }
+//   return null;
